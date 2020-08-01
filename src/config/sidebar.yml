@@ -4,13 +4,13 @@
   link: '/'
 - label: Triva Game
   link: '/play'
-- label: API
+- label: API Docs
   items:
     - label: 'Getting started'
       link: '/api'
     - label: 'Querying'
-    - link: '/api/query'
-    - label: 'Demo'
-      link: '/api/demo'
+      link: '/api/query'
+    # - label: 'Demo'
+    #   link: '/api/demo'
 - label: About
   link: '/about'

@@ -5,6 +5,7 @@ module.exports = {
     siteTitleShort: `JavaScript Trivia`,
     siteDescription: `JavaScript trivia questions and public API`,
     siteUrl: `https://javascript-trivia.com`,
+    siteLogo: '/logo.png',
     siteAuthor: `Ben Perlmutter`,
     siteImage: `/banner.png`,
     siteLanguage: `en`,
@@ -22,6 +23,12 @@ module.exports = {
         githubUrl: `https://github.com/rocketseat/gatsby-themes`,
         baseDir: `examples/gatsby-theme-docs`,
       },
+    },
+    {
+      resolve: `gatsby-plugin-theme-ui`,
+      options: {
+        preset: require('@theme-ui/preset-roboto'),
+    },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -44,7 +51,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://rocketdocs.netlify.com`,
+        siteUrl: `https://javascript-trivia.com`,
       },
     },
     `gatsby-plugin-offline`,

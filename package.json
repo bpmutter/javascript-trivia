@@ -8,15 +8,18 @@
   "starter-name": "gatsby-starter-rocket-docs",
   "dependencies": {
     "@rocketseat/gatsby-theme-docs": "latest",
+    "@theme-ui/preset-roboto": "^0.3.0",
     "gatsby": "latest",
     "gatsby-plugin-canonical-urls": "^2.1.19",
     "gatsby-plugin-google-analytics": "^2.1.34",
     "gatsby-plugin-manifest": "^2.2.37",
     "gatsby-plugin-offline": "^3.0.32",
     "gatsby-plugin-sitemap": "^2.2.26",
+    "gatsby-plugin-theme-ui": "^0.3.0",
     "prop-types": "^15.7.2",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "theme-ui": "^0.3.1"
   },
   "devDependencies": {},
   "keywords": [

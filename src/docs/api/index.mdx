@@ -5,13 +5,18 @@ image: /banner.png
 ---
 
 ### Table of Contents 
-* [API Endpoint](#api-endpoint)
+* [API Endpoint](#api-overview)
 * [Question Data Schema](#question-data-schema)
 * [Example Data](#example-data)
 
 ---
-## API Endpoint
-The API endpoint is: [`https://api.javascript-trivia.com/`]()
+## API Overview
+The JavaScript Trivia API is a RESTful API that you can use to get single JavaScript trivia questions objects in a variety of (human-readable) languages. 
+
+The API endpoint is: 
+```url
+https://api.javascript-trivia.com/
+```
 
 As of now, the API is completely public. It is primarly recommended for use in small personal projects and for education purposes.
 
@@ -23,8 +28,8 @@ If you would like to use the data for larger scale purposes, you can find it in 
 * **`question`:** String. Formatted in Markdown.
 * **`codeSnippet`:** String. Multiline JavaScript.
   * **Note:** Not all questions include a code snippet, so if you are using the API to dynamically render questions, you should include checks to see if the `codeSnippet` is included.
-* **`answer options`:** Object. The keys are a question label, usually A-D, and the value is the answer text.
-* **`correct answer`:** String. Single letter corresponing to the the correct key of the answer options. 
+* **`answerOptions`:** Object. The keys are a question label, usually A-D, and the value is the answer text.
+* **`correctAnswer`:** String. Single letter corresponing to the the correct key of the answer options. 
 * **`answerExplanation`:** String. Formatted in Markdown.
 
 ---

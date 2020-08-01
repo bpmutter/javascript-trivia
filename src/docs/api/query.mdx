@@ -5,9 +5,104 @@ image: /banner.png
 ---
 
 ### Table of Contents 
-* [Supported Languages](#supported-language)
-* [Get All Questions by Language](#api-endpoint)
-* [Get One Question by Language](#question-data-schema)
+* [API Endpoint](#api-endpoint)
+* [Supported Languages](#supported-languages)
+* [Get All Questions by Language](#get-all-questions-by-language)
+* [Get One Question by Language](#get-one-question-by-language)
+
+---
+## API Endpoint
+The API endpoint is: 
+```url
+https://api.javascript-trivia.com/
+```
+
+As of now, the API is completely public. It is primarly recommended for use in small personal projects and for education purposes.
+
+If you would like to use the data for larger scale purposes, you can find it in JSON format in the <a href="https://github.com/bpmutter/js-trivia-api/tree/master/questions" target="_blank" rel="noopener">questions section of the project repo</a>.
 
 ---
 ## Supported Languages
+
+Currently the JavaScript API contains questions in the following (human) languages: 
+<!-- https://www.tablesgenerator.com/markdown_tables -->
+| **Language** | **Param** | **Notes**                                                                                       |
+|--------------|-----------|-------------------------------------------------------------------------------------------------|
+| English      | `en`      | If no language param is specified, the JavaScript Trivia API defaults to English. |
+| Español      | `es`      |                                                                                                 |
+|              |           |   
+
+**Note**: If you notice any problems issues the translations, please report the issue in the <a href="https://github.com/bpmutter/js-trivia-api" target="_blank" rel="noopener">API's Github repo</a>.
+
+---
+## Get All Questions by Language
+To get all questions in a particular language, you simply query: 
+```url
+https://api.javascript-trivia.com/{lang-param}/
+```
+The request returns a JSON object with the language name specified in the key (ex. questionsEN for English), and a value with all the questions for the language in an array. 
+
+If no language param is provided, the API provides the results in English. 
+
+Example query: `https://api.javascript-trivia.com/en/`
+```JSON
+{"questionsEN": [
+    {
+        "id": 1,
+        "question": "What's the output?",
+        "codeSnippet": "function sayHi() {\n  console.log(name);\n  console.log(age);\n  var name = 'Lydia';\n  let age = 21;\n}\n\nsayHi();",
+        "answerOptions": {
+            "A": "`Lydia` and `undefined`",
+            "B": "`Lydia` and `ReferenceError`",
+            "C": "`ReferenceError` and `21`",
+            "D": "`undefined` and `ReferenceError`"
+        },
+        "correctAnswer": "D",
+        "answerExplanation": "Within the function, we first declare the `name` variable with the `var` keyword. This means that the variable gets hoisted (memory space is set up during the creation phase) with the default value of `undefined`, until we actually get to the line where we define the variable. We haven't defined the variable yet on the line where we try to log the `name` variable, so it still holds the value of `undefined`.\n\nVariables with the `let` keyword (and `const`) are hoisted, but unlike `var`, don't get <i>initialized</i>. They are not accessible before the line we declare (initialize) them. This is called the \"temporal dead zone\". When we try to access the variables before they are declared, JavaScript throws a `ReferenceError`."
+    }, 
+/*... a whole lot more results ... */
+    {
+        "id": 155,
+        "question": "What's the output?",
+        "codeSnippet": "let randomValue = { name: \"Lydia\" }\nrandomValue = 23\n\nif (!typeof randomValue === \"string\") {\n\tconsole.log(\"It's not a string!\")\n} else {\n\tconsole.log(\"Yay it's a string!\")\n}",
+        "answerOptions": {
+            "A": "`It's not a string!`",
+            "B": "`Yay it's a string!`",
+            "C": "`TypeError`",
+            "D": "`undefined`"
+        },
+        "correctAnswer": "B",
+        "answerExplanation": "The condition within the `if` statement checks whether the value of `!typeof randomValue` is equal to `\"string\"`. The `!` operator converts the value to a boolean value. If the value is truthy, the returned value will be `false`, if the value is falsy, the returned value will be `true`. In this case, the returned value of `typeof randomValue` is the truthy value `\"string\"`, meaning that the value of `!typeof randomValue` is the boolean value `false`.\n\n`!typeof randomValue === \"string\"` always returns false, since we're actually checking `false === \"string\"`. Since the condition returned `false`, the code block of the `else` statement gets run, and `Yay it's a string!` gets logged."
+    }
+]}
+```
+
+
+---
+## Get One Question by Language
+To get one questionq in a particular language, you query: 
+```url
+https://api.javascript-trivia.com/{lang-param}/{question-id}
+```
+
+The request returns a JSON object with the data for a single question.
+
+If no language param is provided, the API provides the results in English. 
+
+Example query: `https://api.javascript-trivia.com/en/123`
+```JSON
+{
+    "id": 123,
+    "question": "What's the output?",
+    "codeSnippet": "const add = x => y => z => {\n  console.log(x, y, z);\n  return x + y + z;\n};\n\nadd(4)(5)(6);",
+    "answerOptions": {
+        "A": "`4` `5` `6`",
+        "B": "`6` `5` `4`",
+        "C": "`4` `function` `function`",
+        "D": "`undefined` `undefined` `6`"
+    },
+    "correctAnswer": "A",
+    "answerExplanation": "The `add` function returns an arrow function, which returns an arrow function, which returns an arrow function (still with me?). The first function receives an argument `x` with the value of `4`. We invoke the second function, which receives an argument `y` with the value `5`. Then we invoke the third function, which receives an argument `z` with the value `6`. When we're trying to access the value `x`, `y` and `z` within the last arrow function, the JS engine goes up the scope chain in order to find the values for `x` and `y` accordingly. This returns `4` `5` `6`."
+}
+```
+
