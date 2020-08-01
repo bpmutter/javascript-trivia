@@ -1,0 +1,50 @@
+---
+title: Getting Started
+description: Learn about the JavaScript Trivia API
+image: /banner.png
+---
+
+### Table of Contents 
+* [API Endpoint](#api-endpoint)
+* [Question Data Schema](#question-data-schema)
+* [Example Data](#example-data)
+
+---
+## API Endpoint
+The API endpoint is: [`https://api.javascript-trivia.com/`]()
+
+As of now, the API is completely public. It is primarly recommended for use in small personal projects and for education purposes.
+
+If you would like to use the data for larger scale purposes, you can find it in JSON format in the <a href="https://github.com/bpmutter/js-trivia-api/tree/master/questions" target="_blank" rel="noopener">questions section of the project repo</a>.
+
+---
+## Question Data Schema
+* **`id`:** Integer. Unique identifier for the question.
+* **`question`:** String. Formatted in Markdown.
+* **`codeSnippet`:** String. Multiline JavaScript.
+  * **Note:** Not all questions include a code snippet, so if you are using the API to dynamically render questions, you should include checks to see if the `codeSnippet` is included.
+* **`answer options`:** Object. The keys are a question label, usually A-D, and the value is the answer text.
+* **`correct answer`:** String. Single letter corresponing to the the correct key of the answer options. 
+* **`answerExplanation`:** String. Formatted in Markdown.
+
+---
+## Example Data
+```json
+{
+    "id": 38,
+    "question": "What's the output?",
+    "codeSnippet": "(() => {\n  let x, y;\n  try {\n    throw new Error();\n  } catch (x) {\n    (x = 1), (y = 2);\n    console.log(x);\n  }\n  console.log(x);\n  console.log(y);\n})();",
+    "answerOptions": {
+        "A": "`1` `undefined` `2`",
+        "B": "`undefined` `undefined` `undefined`",
+        "C": "`1` `1` `2`",
+        "D": "`1` `undefined` `undefined`"
+    },
+    "correctAnswer": "A",
+    "answerExplanation": "The `catch` block receives the argument `x`. This is not the same `x` as the variable when we pass arguments. This variable `x` is block-scoped.\n\nLater, we set this block-scoped variable equal to `1`, and set the value of the variable `y`. Now, we log the block-scoped variable `x`, which is equal to `1`.\n\nOutside of the `catch` block, `x` is still `undefined`, and `y` is `2`. When we want to `console.log(x)` outside of the `catch` block, it returns `undefined`, and `y` returns `2`."
+}
+```
+
+
+
+
