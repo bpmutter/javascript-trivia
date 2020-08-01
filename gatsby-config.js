@@ -1,16 +1,17 @@
 module.exports = {
   siteMetadata: {
-    siteTitle: `@rocketseat/gatsby-theme-docs`,
-    defaultTitle: `@rocketseat/gatsby-theme-docs`,
-    siteTitleShort: `gatsby-theme-docs`,
-    siteDescription: `Out of the box Gatsby Theme for creating documentation websites easily and quickly`,
-    siteUrl: `https://rocketdocs.netlify.com`,
-    siteAuthor: `@rocketseat`,
+    siteTitle: `JavaScript Trivia`,
+    defaultTitle: `JavaScript Trivia`,
+    siteTitleShort: `JavaScript Trivia`,
+    siteDescription: `JavaScript trivia questions and public API`,
+    siteUrl: `https://javascript-trivia.com`,
+    siteAuthor: `Ben Perlmutter`,
     siteImage: `/banner.png`,
     siteLanguage: `en`,
-    themeColor: `#7159c1`,
+    themeColor: `#1103FF`,
     basePath: `/`,
-    footer: `Theme by Rocketseat`,
+    footer: `Made with love, Gatsby, and java (the liquid kind)
+     by Ben Perlmutter`,
   },
   plugins: [
     {
