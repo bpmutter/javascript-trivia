@@ -1,3 +1,6 @@
+const date = new Date();
+const year = date.getFullYear();
+
 module.exports = {
   siteMetadata: {
     siteTitle: `JavaScript Trivia`,
@@ -5,14 +8,14 @@ module.exports = {
     siteTitleShort: `JavaScript Trivia`,
     siteDescription: `JavaScript trivia questions and public API`,
     siteUrl: `https://javascript-trivia.com`,
-    siteLogo: '/logo.png',
+    siteLogo: "/logo.png",
     siteAuthor: `Ben Perlmutter`,
     siteImage: `/banner.png`,
     siteLanguage: `en`,
     themeColor: `#1103FF`,
     basePath: `/`,
     footer: `Made with love, Gatsby, and java (the liquid kind)
-     by Ben Perlmutter`,
+     by Ben Perlmutter.   © ${year}`,
   },
   plugins: [
     {
@@ -27,8 +30,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-theme-ui`,
       options: {
-        preset: require('@theme-ui/preset-roboto'),
-    },
+        preset: require("@theme-ui/preset-roboto"),
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,

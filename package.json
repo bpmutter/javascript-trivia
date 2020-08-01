@@ -21,7 +21,9 @@
     "react-dom": "latest",
     "theme-ui": "^0.3.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
+  },
   "keywords": [
     "gatsby",
     "rocketseat",
@@ -31,6 +33,7 @@
     "build": "gatsby build",
     "start": "gatsby develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   }
 }
