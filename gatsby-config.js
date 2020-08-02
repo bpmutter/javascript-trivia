@@ -32,8 +32,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Rocketseat Gatsby Themes`,
-        short_name: `RS Gatsby Themes`,
+        name: `JavaScript Trivia - trivia questions and public API`,
+        short_name: `JavaScript Trivia`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#1103FF`,
@@ -45,7 +45,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        // trackingId: ``,
+        trackingId: `UA-164663303-2`,
       },
     },
     {
