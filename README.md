@@ -16,7 +16,11 @@ Knowing the quirks of the language and is important for debugging your code, aci
 
 JavaScript Trivia is a [interactive trivia app](/play) for the Javascript language. There is also a [public API](/api/getting-started) where you can get the trivia questions for your own application. 
 
-### [Get Started in the API docs!](https://javascript-trivia.com)
+
+<h3 align="center">
+<a href="https://javascript-trivia.com" target="_blank">Get Started in the API docs!</a>
+</h3> 
+
 
 ## Data Sourcing & Project Inspiration
 The data was sourced from from the awesome <a href="https://github.com/lydiahallie/javascript-questions" target="_blank" rel="noopener">javascript-questions</a> repo created by the awesome <a href="https://github.com/lydiahallie" target="_blank" rel="noopener">Lydia Hallie</a>. Immense thanks to her and everyone who helped contribute to the javascript-questions project. Without their work, this project would only be a fraction of what it is. 
