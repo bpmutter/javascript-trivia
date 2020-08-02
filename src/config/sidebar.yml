@@ -2,7 +2,7 @@
 
 - label: Home
   link: '/'
-- label: Triva Game
+- label: Trivia Game
   link: '/play'
 - label: API Docs
   items:

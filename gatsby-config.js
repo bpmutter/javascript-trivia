@@ -1,3 +1,5 @@
+const roboto = require("@theme-ui/preset-funk");
+
 const date = new Date();
 const year = date.getFullYear();
 
@@ -28,18 +30,13 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-theme-ui`,
-      options: {
-        preset: require("@theme-ui/preset-roboto"),
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Rocketseat Gatsby Themes`,
         short_name: `RS Gatsby Themes`,
         start_url: `/`,
         background_color: `#ffffff`,
+        theme_color: `#1103FF`,
         display: `standalone`,
         icon: `static/favicon.png`,
       },
@@ -58,5 +55,12 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-theme-ui`,
+      options: {
+        preset: roboto,
+        // basePath: `/`,
+      },
+    },
   ],
 };

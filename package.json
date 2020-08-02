@@ -7,7 +7,9 @@
   "license": "MIT",
   "starter-name": "gatsby-starter-rocket-docs",
   "dependencies": {
+    "@mdx-js/react": "^1.6.16",
     "@rocketseat/gatsby-theme-docs": "latest",
+    "@theme-ui/preset-funk": "^0.3.0",
     "@theme-ui/preset-roboto": "^0.3.0",
     "gatsby": "latest",
     "gatsby-plugin-canonical-urls": "^2.1.19",
@@ -16,6 +18,7 @@
     "gatsby-plugin-offline": "^3.0.32",
     "gatsby-plugin-sitemap": "^2.2.26",
     "gatsby-plugin-theme-ui": "^0.3.0",
+    "prism-react-renderer": "^1.1.1",
     "prop-types": "^15.7.2",
     "react": "latest",
     "react-dom": "latest",
