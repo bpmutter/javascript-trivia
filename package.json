@@ -8,6 +8,7 @@
   "starter-name": "gatsby-starter-rocket-docs",
   "dependencies": {
     "@mdx-js/react": "^1.6.16",
+    "@rebass/forms": "^4.0.6",
     "@rocketseat/gatsby-theme-docs": "latest",
     "@theme-ui/preset-funk": "^0.3.0",
     "@theme-ui/preset-roboto": "^0.3.0",
@@ -22,6 +23,9 @@
     "prop-types": "^15.7.2",
     "react": "latest",
     "react-dom": "latest",
+    "react-markdown": "^4.3.1",
+    "react-syntax-highlighter": "^13.2.1",
+    "rebass": "^4.0.7",
     "theme-ui": "^0.3.1"
   },
   "devDependencies": {
