@@ -3,6 +3,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import Question from '../components/Question';
+import QuestionNavigation from "../components/QuestionNavigation";
 import Layout from "@rocketseat/gatsby-theme-docs/src/components/Layout";
 import SEO from "@rocketseat/gatsby-theme-docs/src/components/SEO";
 
@@ -28,6 +29,7 @@ export default function Game() {
   return (
     <Layout title="JavaScript Trivia Game">
       <SEO title="Play JS Trivia" />
+      <QuestionNavigation/>
       <Question question={example}/>
     </Layout>
   );
