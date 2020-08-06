@@ -19,6 +19,9 @@ function setActiveLanguageAnswered(questionId, val){
     const questionIdx = questionId - 1;
     activeLanguageAnswered[questionIdx] = val;
 }
+function setActiveQuestionNum(num) {
+  localStorage.setItem("activeQuestionNum", num);
+}
 
 function getActiveLangName(){
     return localStorage.getItem("activeLangName");
@@ -32,6 +35,9 @@ function getActiveLangNumQuestions() {
 function getActiveLangAnswered() {
   return JSON.parse(localStorage.getItem("activeLangAnswered"));
 }
+function getActiveQuestionNum(){
+  return JSON.parse(localStorage.getItem("activeQuestionNum"));
+}
 
 
 
@@ -40,9 +46,11 @@ const exports = {
   setActiveLangName,
   setActiveLangQuestions,
   setActiveLanguageAnswered,
+  setActiveQuestionNum,
   getActiveLangName,
   getActiveLangQuestions,
   getActiveLangNumQuestions,
   getActiveLangAnswered,
+  getActiveQuestionNum,
 };
 export default exports;

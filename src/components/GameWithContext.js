@@ -1,15 +1,53 @@
-//notes on game:
-/* 
-so the game will basically be a full client-side react app with state management and data persistence occurring in the browser
-
-so at this top "app" lvl, need to set context, and then there are basically 2 parallel systems running to persist data, context that the app is doing, and then a mirror image of it is being passed to localstorage for when the user comes back to the website.
-
-*/
-import React, {useState, useContext} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
+import Context from './Context';
+import Game from './Game'
+import setUpGameState from '../state-management/setUpGameState';
 
 export default function GameWithContext(){
+    const [activeQuestionNum, setActiveQuestion] = useState({});
+    const [language, setLanguage] = useState("");
+    const [questions, setQuestions] = useState([]);
+    const [questionsCompleted, setQuestionsCompleted] = useState([]);
 
-    return(<p>
-        derp derp derp
-    </p>)
+    useEffect(()=>{
+        (async()=>{
+            const state = await setUpGameState();
+            const {activeLanguage, activeLangQuestions, activeLangAnswered, activeQuestionNum} = state;
+            setActiveQuestion(activeQuestionNum);
+            setLanguage(activeLanguage);
+            setQuestions(activeLangQuestions);
+            setQuestionsCompleted(activeLangAnswered);
+        })();
+    },[]);
+
+    const restartGame = (lang)=>{
+        return 
+    }
+    const goToPrevQuestion = () => {
+      if(activeQuestionNum > 1) setActiveQuestion(activeQuestionNum - 1);
+    };
+    const goToNextQuestion = () => {
+        if (activeQuestionNum < questions.length) setActiveQuestion(activeQuestionNum + 1);
+    };
+    const goToRandomUnvisitedQuestion = () => {
+      return;
+    };
+    const updateQuestionsCompleted = (question, answer) => {
+        return;
+    }
+    const context = {
+      goToNextQuestion,
+      goToPrevQuestion,
+      goToRandomUnvisitedQuestion,
+      restartGame,
+      activeQuestionNum,
+      language,
+      questions,
+      questionsCompleted,
+    };
+    return(
+        <Context.Provider value={context}>
+            <Game />
+        </Context.Provider>
+    )
 }
