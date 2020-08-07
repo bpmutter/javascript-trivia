@@ -2,6 +2,8 @@ import React, {useState, useEffect, useContext} from 'react';
 import Context from './Context';
 import Game from './Game'
 import setUpGameState from '../state-management/setUpGameState';
+import setActiveQuestionNum from '../state-management/setActiveQuestion';
+
 
 export default function GameWithContext(){
     const [activeQuestionNum, setActiveQuestion] = useState({});
@@ -24,10 +26,17 @@ export default function GameWithContext(){
         return 
     }
     const goToPrevQuestion = () => {
-      if(activeQuestionNum > 1) setActiveQuestion(activeQuestionNum - 1);
+      if(activeQuestionNum > 1) {
+        setActiveQuestion(activeQuestionNum - 1);
+        setActiveQuestionNum(activeQuestionNum - 1);
+
+    };
     };
     const goToNextQuestion = () => {
-        if (activeQuestionNum < questions.length) setActiveQuestion(activeQuestionNum + 1);
+        if (activeQuestionNum < questions.length) {
+            setActiveQuestion(activeQuestionNum + 1);
+            setActiveQuestionNum(activeQuestionNum + 1);
+        }
     };
     const goToRandomUnvisitedQuestion = () => {
       return;

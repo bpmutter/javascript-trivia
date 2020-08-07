@@ -22,6 +22,10 @@ export default async function setUpGameState(){
         activeLangQuestions = await fetchLanguageQuestions(activeLanguage);
         
     }
+    setActiveLangName(activeLanguage);
+    setActiveLangQuestions(activeLangQuestions);
+    setActiveLanguageAnswered(activeLangAnswered);
+    setActiveQuestionNum(activeQuestionNum);
     return {activeLanguage, activeLangQuestions, activeLangAnswered, activeQuestionNum}
 
 }

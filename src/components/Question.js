@@ -6,7 +6,16 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import questions from '../../content/en.json';
 import context from './Context';
 
-export default function(){
+const styles = {
+  submitButton: {
+    "&:disabled": {
+      cursor: "not-allowed",
+      opacity: 0.4,
+    },
+  }
+};
+
+export default function Question(){
     const {
       activeQuestionNum,
       questions,
@@ -20,6 +29,7 @@ export default function(){
     useEffect(()=>{
       if(activeQuestionNum && questions.length){
         setActiveQuestion(questions[activeQuestionNum-1]);
+        setSelected(null);
       } 
     },[activeQuestionNum, questions])
 
@@ -41,11 +51,13 @@ export default function(){
             <h2>
               Question #{question.id}: {question.question}
             </h2>
-            <Box>
-              <SyntaxHighlighter language="javascript">
-                {question.codeSnippet}
-              </SyntaxHighlighter>
-            </Box>
+            {!!question.codeSnippet && (
+              <Box>
+                <SyntaxHighlighter language="javascript">
+                  {question.codeSnippet}
+                </SyntaxHighlighter>
+              </Box>
+            )}
 
             <Box>
               {Object.keys(question.answerOptions).map((option, i) => (
@@ -74,7 +86,12 @@ export default function(){
                 maxWidth: 400,
               }}
             >
-              <Button variant="primary" mr={2} onClick={checkAnswer}>
+              <Button variant="primary" 
+                mr={2} 
+                onClick={checkAnswer}
+                disabled={selected===null}
+                sx={styles.submitButton}
+              >
                 Submit
               </Button>
               {correctAnswer !== null && (
@@ -100,7 +117,7 @@ export default function(){
                 </>
               )}
             </Box>
-            <Box>
+            <Box sx={{ minHeight: 60 }}>
               {correctAnswer !== null && (
                 <div>
                   <div

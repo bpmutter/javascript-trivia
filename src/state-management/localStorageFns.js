@@ -9,7 +9,7 @@ function setActiveLangQuestions(questionArr){
 }
 
 function setActiveLanguageAnswered(questionId, val){
-    const activeLanguageAnswered = [];
+    let activeLanguageAnswered = [];
     if(!localStorage.getItem("activeLanguageAnswered")){
       const numQuestions = parseInt(localStorage.getItem("numQuestions")) || 0;
       activeLanguageAnswered = Array(numQuestions).fill(null); 

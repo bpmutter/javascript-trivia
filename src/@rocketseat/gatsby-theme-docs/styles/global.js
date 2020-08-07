@@ -67,7 +67,7 @@ export default function GlobalStyle() {
           font-weight: 400;
         }
 
-        code.inline-code {
+        code, code.inline-code {
           display: inline-block;
           vertical-align: middle;
           line-height: 1;
@@ -79,6 +79,9 @@ export default function GlobalStyle() {
           font-feature-settings: "clig" 0, "calt" 0;
           font-variant: no-common-ligatures no-discretionary-ligatures
             no-historical-ligatures no-contextual;
+        }
+        pre.prism-code code{
+          background-color: rgb(40, 42, 54) !important;
         }
 
         a {
