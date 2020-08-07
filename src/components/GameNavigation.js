@@ -1,12 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import context from './Context';
-import { Box, Button, Text } from "rebass";
-import { Label, Select } from "@rebass/forms";
-import supportedLangs from '../../content/supportedLanguages.json';
-import {GrLanguage} from 'react-icons/gr';
+import { Box, Button } from "rebass";
 import {FaArrowCircleLeft} from 'react-icons/fa';
 import {FaArrowCircleRight} from 'react-icons/fa';
 import {FaRandom} from 'react-icons/fa';
+import SelectLanguage from './SelectLanguage';
+
 const styles = {
   navContainer: {
     backgroundColor: "#F5F5FA",
@@ -43,13 +42,6 @@ const styles = {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-  },
-  label: {
-    display: "flex",
-    justifyContent: "flex-end",
-    paddingRight: ".5em",
-    fontWeight: "bold",
-    fontSize: 25,
   },
 };
 
@@ -93,15 +85,7 @@ export default function GameWithContext() {
         </Button>
       </Box>
       <Box sx={styles.langSelect}>
-        <Label htmlFor="lang" sx={styles.label}>
-          <GrLanguage />
-        </Label>
-        <Select id="lang" name="lang" defaultValue="English">
-          {Object.entries(supportedLangs).map((langWithData) => {
-            const lang = langWithData[1];
-            return <option key={lang[0]}>{lang[1]}</option>;
-          })}
-        </Select>
+       <SelectLanguage/>
       </Box>
     </Box>
   );

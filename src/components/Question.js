@@ -30,6 +30,8 @@ export default function Question(){
       if(activeQuestionNum && questions.length){
         setActiveQuestion(questions[activeQuestionNum-1]);
         setSelected(null);
+        setCorrectAnswer(null);
+        setExplanationOpen(false);
       } 
     },[activeQuestionNum, questions])
 

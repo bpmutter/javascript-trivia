@@ -3,7 +3,7 @@ import Context from './Context';
 import Game from './Game'
 import setUpGameState from '../state-management/setUpGameState';
 import setActiveQuestionNum from '../state-management/setActiveQuestion';
-
+import resetGameState from '../state-management/resetGameState';
 
 export default function GameWithContext(){
     const [activeQuestionNum, setActiveQuestion] = useState({});
@@ -22,8 +22,16 @@ export default function GameWithContext(){
         })();
     },[]);
 
-    const restartGame = (lang)=>{
-        return 
+    const restartGame = async (lang)=>{
+
+        const state = await resetGameState(lang); 
+        const {activeLanguage, activeLangQuestions, activeLangAnswered, activeQuestionNum} = state;
+        setActiveQuestion(activeQuestionNum);
+        setLanguage(activeLanguage);
+        setQuestions(activeLangQuestions);
+        setQuestionsCompleted(activeLangAnswered);
+
+
     }
     const goToPrevQuestion = () => {
       if(activeQuestionNum > 1) {
