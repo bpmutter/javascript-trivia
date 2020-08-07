@@ -47,7 +47,14 @@ export default function GameWithContext(){
         }
     };
     const goToRandomUnvisitedQuestion = () => {
-      return;
+      let randomNum = Math.floor(Math.random()* (questions.length)) + 1;
+      console.log('go to random unvisited!!');
+    //   while(randomNum === activeQuestionNum){ 
+    //       randomNum =
+    //         Math.floor(Math.random() * activeLangQuestions.length) + 1;
+    //   }
+    //   setActiveQuestion(randomNum);
+    //   setActiveQuestionNum(randomNum);
     };
     const updateQuestionsCompleted = (question, answer) => {
         return;

@@ -80,9 +80,9 @@ export default function GameWithContext() {
         >
           <FaArrowCircleRight />
         </Button>
-        <Button sx={styles.navButton} onClick={randomQuestion}>
+        {/* <Button sx={styles.navButton} onClick={randomQuestion}>
           <FaRandom />
-        </Button>
+        </Button> */}
       </Box>
       <Box sx={styles.langSelect}>
        <SelectLanguage/>
