@@ -63,6 +63,8 @@ export default function GameWithContext() {
   const randomQuestion = () => {
     goToRandomUnvisitedQuestion()
   }
+
+
   return (
     <Box sx={styles.navContainer} as="nav">
       <Box>

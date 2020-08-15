@@ -3,7 +3,6 @@ import { Box, Button, Text } from "rebass";
 import { Label, Radio } from "@rebass/forms";
 import ReactMarkdown  from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import questions from '../../content/en.json';
 import context from './Context';
 
 const styles = {
@@ -28,7 +27,11 @@ export default function Question(){
 
     useEffect(()=>{
       if(activeQuestionNum && questions.length){
+        // const question = questions[activeQuestionNum - 1];
+        // const answers = Object.keys(question.answerOptions).sort();
+        // console.log("ANSWERS",answers)
         setActiveQuestion(questions[activeQuestionNum-1]);
+        
         setSelected(null);
         setCorrectAnswer(null);
         setExplanationOpen(false);
@@ -62,7 +65,7 @@ export default function Question(){
             )}
 
             <Box>
-              {Object.keys(question.answerOptions).map((option, i) => (
+              {Object.keys(question.answerOptions).sort().map((option, i) => (
                 <Label>
                   <Radio
                     name="selected"
