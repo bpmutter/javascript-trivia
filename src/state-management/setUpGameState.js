@@ -19,7 +19,11 @@ export default async function setUpGameState(){
     const activeQuestionNum = getActiveQuestionNum() || 1;
 
     if(!activeLangQuestions.length){
-        activeLangQuestions = await fetchLanguageQuestions(activeLanguage);
+        try{
+          activeLangQuestions = await fetchLanguageQuestions(activeLanguage);
+        } catch(err){
+          console.error(err);
+        }
         
     }
     setActiveLangName(activeLanguage);

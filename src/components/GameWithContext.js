@@ -14,6 +14,7 @@ export default function GameWithContext(){
     useEffect(()=>{
         (async()=>{
             const state = await setUpGameState();
+            
             const {activeLanguage, activeLangQuestions, activeLangAnswered, activeQuestionNum} = state;
             setActiveQuestion(activeQuestionNum);
             setLanguage(activeLanguage);
