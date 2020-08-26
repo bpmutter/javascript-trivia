@@ -14,7 +14,7 @@ And that's only just the beginning. On the subject of JavaScript's weirdness, th
 
 Knowing the quirks of the language and is important for debugging your code, acing the job interview, and looking smart infront of all your developer friends. 
 
-JavaScript Trivia is a [interactive trivia app](/play) for the Javascript language. There is also a [public API](/api/getting-started) where you can get the trivia questions for your own application. 
+JavaScript Trivia is a [interactive trivia app](https://javascript-trivia.com/play) for the Javascript language. There is also a [public API](https://javascript-trivia.com/api/getting-started) where you can get the trivia questions for your own application. 
 
 
 <h3 align="center">
@@ -25,7 +25,7 @@ JavaScript Trivia is a [interactive trivia app](/play) for the Javascript langua
 ## Data Sourcing & Project Inspiration
 The data was sourced from from the awesome <a href="https://github.com/lydiahallie/javascript-questions" target="_blank" rel="noopener">javascript-questions</a> repo created by the awesome <a href="https://github.com/lydiahallie" target="_blank" rel="noopener">Lydia Hallie</a>. Immense thanks to her and everyone who helped contribute to the javascript-questions project. Without their work, this project would only be a fraction of what it is. 
 
-While the javascript-questions information is truly steller, it only lived in a Markdown file...until now. In order to create JavaScript Trivia, the data from javascript-questions was parsed and turned into <a href="https://github.com/bpmutter/js-trivia-api/tree/master/questions" target="_blank" rel="noopener">JSON files</a>. The parsed data was used to create a [public API](/api), which was then used to create the [Play](/play) section of this website.
+While the javascript-questions information is truly steller, it only lived in a Markdown file...until now. In order to create JavaScript Trivia, the data from javascript-questions was parsed and turned into <a href="https://github.com/bpmutter/js-trivia-api/tree/master/questions" target="_blank">JSON files</a>. The parsed data was used to create a [public API](/api), which was then used to create the [Play](https://javascript-trivia.com/play) section of this website.
 
 
 ---
