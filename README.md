@@ -14,7 +14,7 @@ And that's only just the beginning. On the subject of JavaScript's weirdness, th
 
 Knowing the quirks of the language and is important for debugging your code, acing the job interview, and looking smart infront of all your developer friends. 
 
-JavaScript Trivia is a [interactive trivia app](https://javascript-trivia.com/play) for the Javascript language. There is also a [public API](https://javascript-trivia.com/api/getting-started) where you can get the trivia questions for your own application. 
+JavaScript Trivia is a [interactive trivia app](https://javascript-trivia.com/play) for the Javascript language. There is also a [public API](https://javascript-trivia.com/api) where you can get the trivia questions for your own application. 
 
 
 <h3 align="center">
